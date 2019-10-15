@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="HashLib\**" />
+    <EmbeddedResource Remove="HashLib\**" />
+    <None Remove="HashLib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Stratum\CryptoNightStratum.cs" />
+    <Compile Remove="Stratum\EthashStratum.cs" />
+    <Compile Remove="Stratum\LbryStratum.cs" />
+    <Compile Remove="Stratum\Lyra2REv2Stratum.cs" />
+    <Compile Remove="Stratum\NiceHashEthashStratum.cs" />
+    <Compile Remove="Stratum\OpenEthereumPoolEthashStratum.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Stratum\CryptoNightStratum.cs" />
+    <None Include="Stratum\EthashStratum.cs" />
+    <None Include="Stratum\LbryStratum.cs" />
+    <None Include="Stratum\Lyra2REv2Stratum.cs" />
+    <None Include="Stratum\NiceHashEthashStratum.cs" />
+    <None Include="Stratum\OpenEthereumPoolEthashStratum.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="HashLib\HashLib.csproj" />
+  </ItemGroup>
+
+</Project>
